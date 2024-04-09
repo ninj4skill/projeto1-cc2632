@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include "tarefas.h"
 
 ERROS criar(Tarefa tarefas[], int *pos){
