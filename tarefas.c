@@ -14,11 +14,11 @@ ERROS criar(Tarefa tarefas[], int *pos){
       
       clearBuffer();
       printf("Entre com a categoria: "); 
-      fgets(tarefas[*pos].categoria, 100, stdin); 
+      fgets(tarefas[*pos].categoria,  TOTALC, stdin); 
 
       tarefas[*pos].categoria[strcspn(tarefas[*pos].categoria,"\n")] = '\0';
       printf("Entre com a descricao: ");
-      fgets(tarefas[*pos].descricao, 300, stdin);
+      fgets(tarefas[*pos].descricao, TOTALD, stdin);
       tarefas[*pos].descricao[strcspn(tarefas[*pos].descricao,"\n")] = '\0';
       
       *pos = *pos + 1;
@@ -56,7 +56,7 @@ ERROS listar(Tarefa tarefas[], int *pos){
         return SEM_TAREFAS;
     printf("Qual a categoria das tarefas que deseja listar?: ");
     clearBuffer();
-    fgets(tarefas[*pos].categoria, 100, stdin); 
+    fgets(tarefas[*pos].categoria, TOTALC, stdin); 
     int tarefascategoria = 0;
     tarefas[*pos].categoria[strcspn(tarefas[*pos].categoria,"\n")] = '\0';
     for(int i=0; i<*pos; i++){
