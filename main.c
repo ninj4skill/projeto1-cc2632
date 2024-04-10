@@ -25,7 +25,7 @@ int main(){
         if(opcao > 2)
             printf("Opcao invalida\n");
         else if(opcao >= 0){
-            //fs[opcao](tarefas, &pos);
+            
             if (opcao == 0){
                 erro = fs[0](tarefas, &pos);
                 if (erro == MAX_TAREFA){
