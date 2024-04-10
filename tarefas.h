@@ -1,4 +1,6 @@
 #define TOTAL 100
+#define TOTALC 100
+#define TOTALD 300
 
 typedef struct {
     int prioridade;
