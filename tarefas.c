@@ -69,6 +69,7 @@ ERROS listar(Tarefa tarefas[], int *pos){
         }
     }
     if (tarefascategoria == 0){
+        printf("Categoria não encontrada");
         return NAO_ENCONTRADO;
     }
 
@@ -110,6 +111,41 @@ ERROS carregar(Tarefa tarefas[], int *pos){
     if(fclose(f))
         return FECHAR;
 
+    return OK;
+
+}
+
+ERROS exportar(Tarefa tarefas[], int *pos){
+    char arquivtext[100];
+    printf("Digite o nome do arquivo em que deseja salvar as tarefas: ");
+    clearBuffer();
+    fgets(arquivtext, 100, stdin); 
+    arquivtext[strcspn(arquivtext,"\n")] = '\0';
+    printf("Digite a categoria das tarefas que deseja exportar: ");
+    fgets(tarefas[*pos].categoria, 100, stdin); 
+    clearBuffer();
+    tarefas[*pos].categoria[strcspn(tarefas[*pos].categoria,"\n")] = '\0';
+    int tarefascategoria = 0;
+    FILE *f = fopen(arquivtext, "w");
+    if(f == NULL){
+        return ABRIR;
+    }
+    for(int i = 0; i < *pos; i++){
+        if(strcmp(tarefas[i].categoria, tarefas[*pos].categoria) == 0){
+            fprintf(f, "Pos: %d\t", i+1);
+            fprintf(f, "Prioridade: %d\t", tarefas[i].prioridade);
+            fprintf(f, "Categoria: %s\t", tarefas[i].categoria);
+            fprintf(f, "Descrição: %s\n", tarefas[i].descricao);
+            tarefascategoria++;
+        }
+    }
+    if (fclose(f)){
+        return FECHAR;
+    }
+    if (tarefascategoria == 0){
+        return NAO_ENCONTRADO;
+    }
+   
     return OK;
 
 }
