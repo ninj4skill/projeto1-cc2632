@@ -60,12 +60,11 @@ int main(){
                 erro = fs[5](tarefas, &pos);
                 if (erro == ABRIR || erro == FECHAR || erro == LER){
                     printf("Não foi possivel carregar as tarefas\n");
-                }
+                }}
             else if (opcao == 5){
                 erro = fs[4](tarefas, &pos);
                 if (erro == ABRIR || erro == ESCREVER || erro == FECHAR)
                     printf("Não foi possivel salvar as tarefas\n");
-            }
             }
             }
         else
