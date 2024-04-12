@@ -1,5 +1,6 @@
 # projeto2 de deselvolvimento de algoritmos cc2632
 Linguagem = C
+
 Programa para gerenciar uma lista de tarefas, com sua prioridade, categoria e descrição com um limite de 100 tarefas
 O usuário pode criar, deletar e listar tarefas de uma categoria
 O usuário também possui as opções de carregar e salvar as tarefas em um arquivo binário e também exportar tarefas de um categoria para um arquivo de texto simples
