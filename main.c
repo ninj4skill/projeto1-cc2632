@@ -70,11 +70,7 @@ int main(){
             }
         else
             printf("Sair...\n");
-            erro == fs[4](tarefas, &pos);
-            if (erro == ABRIR || erro == ESCREVER || erro == FECHAR){
-                printf("Não foi possivel salvar as tarefas\n");
-            
-            }
+           
 
     } while(opcao >= 0);
 
